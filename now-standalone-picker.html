@@ -200,10 +200,7 @@ Polymer({
 		}
 		if (this.searchValue.length > 2) {
 			var searchVal = this.searchValue.toLowerCase();
-			if (this.selectionList.length === 0) {
-				this.selectionList = this._origSelectionList;
-			}
-			this.selectionList = this.selectionList.filter(function(item) {
+			this.selectionList = this._origSelectionList.filter(function(item) {
 				var title = item.title.toLowerCase();
 				return title.indexOf(searchVal) > -1;
 			});
