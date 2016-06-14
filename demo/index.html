@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+		<title>now-standalone-picker Demo</title>
+		<script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+		<link rel="import" href="../now-standalone-picker.html">
+		<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+		<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+	</head>
+	<body unresolved>
+
+		<p>An example of <code>&lt;now-standalone-picker&gt;</code>:</p>
+
+		<demo-snippet class="centered-demo">
+			<template id="pickerDemo">
+				<now-standalone-picker
+					right-side-title="Now Picker: Selected Items"
+					selected-list="{{selected}}">
+				</now-standalone-picker>
+				<script>
+					var picker = document.querySelector('#pickerDemo');
+					picker.selected = [];
+					picker.selections = [
+						{"id": "123", "title": "Selection Item 1"},
+						{"id": "121", "title": "Selection Item 2"},
+						{"id": "122", "title": "Selection Item 3"},
+						{"id": "124", "title": "Selection Item 4"},
+						{"id": "125", "title": "Selection Item 5"},
+						{"id": "126", "title": "Selection Item 6"},
+						{"id": "127", "title": "Selection Item 7"},
+						{"id": "128", "title": "Selection Item 8"},
+						{"id": "129", "title": "Selection Item 9"},
+						{"id": "120", "title": "Selection Item 10"}
+					];
+					var saPicker = document.querySelector('now-standalone-picker');
+					saPicker.set('selectionList', picker.selections);
+					saPicker.set('selectedList', picker.selected);
+				</script>
+			</template>
+		</demo-snippet>
+	</body>
+</html>
