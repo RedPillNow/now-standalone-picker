@@ -15,6 +15,9 @@
 
 		<demo-snippet class="centered-demo">
 			<template id="pickerDemo">
+				<template is="dom-repeat" items="{{selected}}" as="item">
+					<div>{{item.title}}</div>
+				</template>
 				<now-standalone-picker
 					right-side-title="Now Picker: Selected Items"
 					selected-list="{{selected}}">
@@ -35,6 +38,9 @@
 						{"id": "120", "title": "Selection Item 10"}
 					];
 					var saPicker = document.querySelector('now-standalone-picker');
+					saPicker.addEventListener('selected-list-changed', function(evt) {
+						console.log('change-selectedList', arguments);
+					});
 					saPicker.set('selectionList', picker.selections);
 					saPicker.set('selectedList', picker.selected);
 				</script>
